@@ -1,0 +1,11 @@
+.nav {
+    @apply h-12 flex justify-between p-4 items-center bg-black shadow-md
+}
+
+.cart {
+    @apply text-gray-200
+}
+
+.hamburger {
+    @apply text-gray-200
+}

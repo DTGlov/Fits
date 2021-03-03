@@ -1,0 +1,7 @@
+.dropdown {
+    @apply grid grid-rows-3 bg-gray-600 text-center text-gray-200
+}
+
+.border {
+    @apply border-b p-4
+}

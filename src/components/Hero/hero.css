@@ -1,0 +1,15 @@
+    .h-screen {
+        height: calc(100vh - theme('spacing.12'));
+    }
+    
+    .h-screen {
+        @apply bg-cover bg-no-repeat bg-local bg-cover opacity-80 flex flex-col items-center justify-center
+    }
+    
+    .text {
+        @apply text-9xl font-bold text-black mb-4
+    }
+    
+    .link {
+        @apply text-xl bg-yellow-500 rounded-full py-6 px-10 transition duration-300 animate-bounce font-bold ease-in-out
+    }
