@@ -29,7 +29,7 @@ const Navbar = ({toggle}) => {
         </div>
         <div className="text-white hidden md:block">
           <Link className="p-4">About Us</Link>
-          <Link className="p-4">Log in</Link>
+          <Link to="/signin" className="p-4">Log in</Link>
           <Link className="p-4">Sign Up</Link>
         </div>
         <div className="cart">
