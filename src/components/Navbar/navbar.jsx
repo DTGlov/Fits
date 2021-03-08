@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css'
+import { auth } from '../../firebase/firebase.utils';
 import Logo from '../../assets/fashion.svg'
 
-const Navbar = ({toggle}) => {
+const Navbar = ({toggle,currentUser}) => {
     return (
       <nav className="nav">
         <div className="hidden md:block">
@@ -27,10 +28,22 @@ const Navbar = ({toggle}) => {
             />
           </svg>
         </div>
-        <div className="text-white hidden md:block">
-          <Link className="p-4">About Us</Link>
-          <Link to="/signin" className="p-4">Log in</Link>
-          <Link className="p-4">Sign Up</Link>
+        <div className="text-white hidden md:block flex">
+          <Link to="/aboutus" className="p-4">
+            About Us
+          </Link>
+          <Link to="/shop" className="p-4">
+            Shop
+          </Link>
+          <Link>
+            {currentUser ? (
+              <Link className="p-4" onClick={() => auth.signOut()}>
+                Sign Out
+              </Link>
+            ) : (
+              <Link to="/signin">Sign In</Link>
+            )}
+          </Link>
         </div>
         <div className="cart">
           <svg

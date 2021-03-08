@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Dropdown from '../Dropdown/dropdown';
 import Navbar from '../Navbar/navbar';
 
-const Header = () => {
+const Header = ({currentUser}) => {
        const [isOpen, setIsOpen] = useState(false)
     
     const toggle = () => {
@@ -10,8 +10,8 @@ const Header = () => {
     }
     return ( 
         <div className="header">
-            <Navbar toggle={ toggle}  />
-            <Dropdown isOpen={ isOpen}/>
+            <Navbar toggle={ toggle} currentUser={currentUser}  />
+            <Dropdown isOpen={isOpen} currentUser={ currentUser}/>
       </div>
      );
 }

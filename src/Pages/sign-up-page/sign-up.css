@@ -23,7 +23,7 @@
 }
 
 .validate {
-    @apply bg-blue-500 text-white font-bold w-full rounded-lg text-xl py-2
+    @apply bg-blue-900 text-white font-bold w-full rounded-lg text-xl py-2
 }
 
 .account-section {

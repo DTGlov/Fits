@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import wardrobe from '../../assets/wardrobe.jpeg'
+import wardrobe from '../../assets/wardrobe.jpeg';
+import {auth,signInWithGoogle} from '../../firebase/firebase.utils'
 import './sign-in.css'
 
 
@@ -11,14 +12,20 @@ const SignIn = () => {
     const [error, setError] = useState('');
     const isInvalid = password === "" || email === ""
 
-    const handleLogin = (e) => { 
-        e.preventDefault();
+    const handleLogin =async (e) => { 
+      e.preventDefault();
+   
+   try {
+     await auth.signInWithEmailAndPassword(email, password)
+     setPassword('')
+     setAddress('')
+   } catch (error) {
+     setAddress('')
+     setPassword('')
+     setError(error.message)
+     console.log(error)
+   }
 
-        // try {
-            
-        // } catch (error) {
-            
-        // }
     }
      
     
@@ -42,6 +49,8 @@ const SignIn = () => {
                   placeholder="Email"
                   className="input"
                   onChange={({ target }) => setAddress(target.value)}
+                  value={email}
+                  required
                 />
                 <input
                   aria-label="Enter your Password"
@@ -49,6 +58,7 @@ const SignIn = () => {
                   placeholder="Password"
                   className="input"
                   onChange={({ target }) => setPassword(target.value)}
+                  value={password}
                 />
                 <button
                   disabled={isInvalid}
@@ -56,6 +66,7 @@ const SignIn = () => {
                 >
                   Log In
                 </button>
+                <button className="validate mt-2" onClick={signInWithGoogle}>Sign in with Google</button>
               </form>
               <div className="account-section">
                 <p>

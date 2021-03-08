@@ -1,12 +1,21 @@
-import React from 'react';
-import './shop.css'
+import React, { useState } from 'react';
+import SHOP_DATA from './shop.data'
+import './shop.css';
+import ShopPreview from '../../components/shop-preview/ShopPreview';
 
 const ShopPage = () => {
-    return (
-        <div className="shop">
-          <p className="text-9xl font-bold bg-yellow-300">Hello</p>
-        </div>
-    );
+  const [collections] = useState(SHOP_DATA)
+  
+  console.log(collections)
+
+  return ( 
+    <div className="shop-page">
+      {collections && collections.map(({ id, ...otherCollectionProps }) => (
+      <ShopPreview key={id} {...otherCollectionProps}/>
+    ))}
+    </div>
+   );
 }
  
 export default ShopPage;
+ 

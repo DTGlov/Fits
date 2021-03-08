@@ -1,9 +1,9 @@
 .container {
-    @apply max-w-sm flex flex-col items-center mx-auto p-3
+    @apply max-w-sm mx-auto p-3
 }
 
 .container-items {
-    @apply w-full flex flex-col py-16
+    @apply w-full py-16
 }
 
 .items {
@@ -15,15 +15,15 @@
 }
 
 .error {
-    @apply mb-4 text-xs text-red-500
+    @apply mb-4 text-sm text-center text-red-500
 }
 
 .input {
-    @apply text-sm text-gray-500 w-full mr-3 py-5 px-4 h-2 border border-gray-400 mb-2
+    @apply text-sm text-black w-full mr-3 py-5 px-4 h-2 border border-gray-400 mb-2
 }
 
 .validate {
-    @apply bg-blue-500 text-white font-bold w-full rounded-lg text-xl py-2
+    @apply bg-blue-900 text-white font-bold w-full rounded-lg text-xl py-2
 }
 
 .account-section {
